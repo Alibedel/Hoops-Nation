@@ -8,8 +8,20 @@ var passport = require('passport');
 var methodOverride = require('method-override');
 var session = require('express-session');
 
+
+// load the env vars
+require('dotenv').config();
+
+
+// connect to the MongoDB with mongoose
+require('./config/database');
+require('./config/passport');
+
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+// var usersRouter = require('./routes/users');
+var teamsRouter = require('./routes/teams');
+const playersRouter = require('./routes/players');
+var homeRouter = require('./routes/homepage');
 
 var app = express();
 
@@ -21,10 +33,22 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+  secret: 'nba',
+  resave: false,
+  saveUninitialized: true
+}));
+// app.use(session({... code above
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/users', usersRouter);
+app.use('/teams', teamsRouter);
+app.use('/teams', playersRouter);
+app.use('/homepage', homeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

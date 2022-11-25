@@ -1,9 +1,21 @@
-var express = require('express');
-var router = express.Router();
+// const router = require('express').Router();
+// const usersCtrl = require('../controllers/users');
+// // Insert this middleware for routes that require a logged in user
+// function isLoggedIn(req, res, next) {
+//   if (req.isAuthenticated()) return next();
+//   res.redirect('/auth/google');
+// }
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+// // GET /students
+// router.get('/', studentsCtrl.index);
+
+// // POST /facts
+// // We will already have access to the logged in student on
+// // the server, therefore do not use: /students/:id/facts
+// router.post('/facts', isLoggedIn, studentsCtrl.addFact);
+
+// // DELETE /facts/:id
+// router.delete('/facts/:id', isLoggedIn, studentsCtrl.delFact);
 
 module.exports = router;
+
