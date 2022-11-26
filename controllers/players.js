@@ -33,13 +33,13 @@ function create(req, res) {
     player.save(function(err, players) {
       // one way to handle errors
       console.log(players);
-      if (err) return res.render('teams/new',{
+      if (err) return res.render('players/new',{
         players
       });
       // console.log(players);
       // for now, redirect right back to new.ejs
       Player.find({}, function(err,players){
-        res.render('teams/show', {
+        res.render('players/show', {
           players
         });
         
@@ -47,7 +47,7 @@ function create(req, res) {
     });
 }
 function listAll(req, res){
-       res.render('teams/new')
+       res.render('players/new')
 }
 
 
@@ -56,7 +56,7 @@ function deletePlayer(req, res) {
   Player.deleteOne({ "_id" : ObjectId(req.params.id) }, function(err, player){
       if(err) console.log(err)
   });
-  res.redirect('/teams/show');
+  res.redirect('/players/show');
 }
 
 
@@ -64,5 +64,4 @@ module.exports = {
     create,
     delete: deletePlayer,
     listAll,
-    // show
 }

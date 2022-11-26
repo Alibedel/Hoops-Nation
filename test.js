@@ -1,76 +1,69 @@
-// const { default: mongoose } = require("mongoose")
-
-// {
-//     team: {
-//       id: 160,
-//       name: 'Utah Jazz',
-//       logo: 'https://media.api-sports.io/basketball/teams/160.png'
-//     },
-//     games: { played: 19, win: [Object], lose: [Object] },
-//     position: 1,
-//     points: { for: 2231, against: 2176 }
-//   },
-//   {
-//     games: { played: 17, win: [Object], lose: [Object] },
-//     lose: { total: 8, percentage: '0.471' },
-//     win: { total: 9, percentage: '0.529' },
-//     points: { for: 1943, against: 1945 }
-//   },
+// var createError = require('http-errors');
+// var express = require('express');
+// var path = require('path');
+// var cookieParser = require('cookie-parser');
+// var logger = require('morgan');
+// var axios = require('axios');
+// var passport = require('passport');
+// var methodOverride = require('method-override');
+// var session = require('express-session');
 
 
-//   const standingSchema = new mongoose.Schema({
-//     team : teamSchema,
+// // load the env vars
+// require('dotenv').config();
 
-//     games : gameSchema,
 
-//     win : resultSchema,
+// // connect to the MongoDB with mongoose
+// require('./config/database');
+// require('./config/passport');
 
-//     lose : resultSchema
-//     ,
-//     points : pointsSchema,
+// var indexRouter = require('./routes/index');
+// // var usersRouter = require('./routes/users');
+// var teamsRouter = require('./routes/teams');
+// const playersRouter = require('./routes/players');
+// var homeRouter = require('./routes/homepage');
 
-//     position : {
-//         type: Number
-//     }
-//     // players: [playerSchema]
-// }, {
-//     timestamps : true
+// var app = express();
+
+// // view engine setup
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'ejs');
+
+// app.use(logger('dev'));
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
+// app.use(cookieParser());
+// app.use(session({
+//   secret: 'nba',
+//   resave: false,
+//   saveUninitialized: true
+// }));
+// // app.use(session({... code above
+// app.use(passport.initialize());
+// app.use(passport.session());
+// app.use(express.static(path.join(__dirname, 'public')));
+// app.use(methodOverride('_method'));
+
+// // app.use('/', indexRouter);
+// // app.use('/users', usersRouter);
+// app.use('/teams', teamsRouter);
+// // app.use('/teams', playersRouter);
+// app.use('/', homeRouter);
+
+// // catch 404 and forward to error handler
+// app.use(function(req, res, next) {
+//   next(createError(404));
 // });
 
+// // error handler
+// app.use(function(err, req, res, next) {
+//   // set locals, only providing error in development
+//   res.locals.message = err.message;
+//   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-// const gameSchema = new mongoose.Schema({
-//     played: {
-//         type: Number
-//     },
-// })
+//   // render the error page
+//   res.status(err.status || 500);
+//   res.render('error');
+// });
 
-// const resultSchema = new mongoose.Schema({
-//     total: {
-//         type: Number
-//     },
-//     percentage: {
-//         type: String
-//     }
-// })
-
-// const pointsSchema = new mongoose.Schema({
-//     for: {
-//         type: Number
-//     },
-//     against: {
-//         type: Number
-//     }
-// })
-
-// const teamSchema = new mongoose.Schema({
-//     id: {
-//         type: Number
-//     },
-//     name: {
-//         type: String
-//     },
-//     logo: {
-//         type: String
-//     }
-// })
-
+// module.exports = app;
