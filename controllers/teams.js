@@ -26,59 +26,7 @@ const options = {
   }
 };
 
-// function showTeam () {
-//   let teamId = req.params.id
-//   axios.request(options).then(function (response) {
-//     // console.log(response.data.response);
-//     let teamStats = response.data.response[0].map(teamStat => {
-//         return {
-//             team : teamStat.team,
-//             games: teamStat.games,
-//             position: teamStat.position ,
-//             points: teamStat.points
-//         }
-//     });
-  
-//     Team.insertMany(teamStats, function(err, data){
-//       // console.log(data)
-//       process.exit()
-  
-//     })
 
-
-//     Team.findById(req.params.id, function(err, team) {
-//       res.render('teams/index',{
-//         team
-//       })
-//     });
-  
-  
-    
-//     //  const newdata = teamStats.map(eachstat => {
-//     //   // eachstat.games.win
-//     //   // console.log(eachstat.games.win)
-  
-  
-  
-//     //      return{
-//     //          games : eachstat.games,
-//     //          lose : eachstat.games.lose,
-//     //          win : eachstat.games.win,
-//     //          points : eachstat.points,
-//     //         }
-    
-//     //  })
-     
-  
-//     // console.log("teamStats = ", teamStats)
-//     // console.log('newData', newdata)
-//     // return Team.insertMany(teamStats)
-//   }).catch(function (error) {
-//     console.error(error);
-//   });
-//   res.render('teams/index')
-  
-// }
 
 
 

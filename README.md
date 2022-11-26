@@ -1,6 +1,6 @@
 # NBA LEAGUE
 
-###   NBA LEAGUE LINK: [HERE](https://index-crm-system.herokuapp.com)
+###   NBA LEAGUE LINK: [HERE](https://nba-league.herokuapp.com/teams)
 
 ---
 
@@ -31,46 +31,21 @@ ERD: (view [here](https://app.diagrams.net/#G1QaxznWV-m5zz1KJu4kjrj6yG1LYY4H8k))
 ---
 ## Application Description
 
-Once a user has logged in with Google OAuth, they will be brought to an index view of the standings for the NBA with the n. Users will not be able to see clients that they have not entered into the database. 
+when you run the application, you be in the standings of the NBA league. the app is pull the updated points and position and which teams is going to be on playoffs of the confrences.
+
+then you should sign up as the user and view the standings as you please and after you can click on players to register you favorite player you think will do great or will win MVP.
+
+you can leave a comment and delete it if you wish.
 
 
-From the index view of all clients, the user is able to navigate throughout the application. 
 
-The user can choose to add a new client, move to their to-do list using the left navigation bar, delete a client, or enter the client's profile view. 
-
-Clicking the "Add a New Client" button (located at the top of the client index view) will bring the user to a basic form where they can enter client details. 
-
-
-Upon submitting this form, the user is automatically redirected to the client index view, where they can see all of their clients. 
-
-To view or edit a choosen client, the user simply needs to click on their name (highlighed in blue) on the client index page. 
-
-The client profile page allows the user to see all information about a particular client, as well as add conversations had with this client. 
-
-Client conversations added on this page are specific to this client only, and not shared throughout the remainder of clients in the application. 
-
-Should the user need to edit information for this client, clicking on the green pencil button in the top-left screen will produce an edit client page. 
-
-
-Editing a client will automatically change information previously entered when the client was created or last edited. After updating necessary fields and clicking "Save Client" the user will be redirected to that client's profile page to view recent changes. 
-
-At any time during application use, the user can seamlessly navigate to their to-do list using the left navigation bar. Expanding this bar will show navigation options in English, however, the user can also click on the "clipboard" icon as well.
-
-
-This page utilizes an embedded form for entering new to-do list items and will automatically update the following to-do list after a new item has been added. 
-
-Clicking the checkbox to the left of an active to-do item will "cross the item off." This action will not remove the to-do from view, but will only "cross it off." In order to remove a to-do list item permanently, click on the green "X" button to the right of the specified to-do. 
-
->For example purposes, all of the above "clients" are fictional. 
 
 ---
 
-## Icebox Features 🧊
-While this application accomplishes a lot of user-functionality, there are a number of icebox features which will be added as availability permits. Here are some of the future upgrades... 
+## Icebox Features 
+While this application accomplishes a lot of user-functionality, there are a number of icebox features which will be added as availability permits. 
 
-- Add functionality to delete specific client conversations 
-- Add search capability to find clients by name
+- Add functionality to add comment to teams and descuess with other fans 
+- Add search capability to find player by name and comment on someone else's comment
 - Add "pop-up" verification when deleting a client (as a double check for user)
-- Add dark/light mode toggle (with respect to user settings)
-- Allow users to upload a document for specific clients (such as a resume, or cover letter)
-- Add navigation to an integrated Google Calendar (which will allow users to integrate meeting scheduling)
+- add fixtures and let the fans comment their prediction or a poll on which team is gonna win

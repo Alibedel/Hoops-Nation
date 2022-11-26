@@ -44,20 +44,3 @@ module.exports = {
   //   delFact,
   };
 
-// // function addFact(req, res, next) {
-// //   req.user.facts.push(req.body);
-// //   req.user
-// //     .save()
-// //     .then(() => res.redirect('/students'))
-// //     .catch((err) => res.redirect('/students'));
-// // }
-
-// // function delFact(req, res, next) {
-// //   Student.findOne({ 'facts._id': req.params.id })
-// //     .then((student) => {
-// //       student.facts.id(req.params.id).remove();
-// //       return student.save();
-// //     })
-// //     .then(() => res.redirect('/students'))
-// //     .catch(() => res.redirect('/students'));
-// // }
