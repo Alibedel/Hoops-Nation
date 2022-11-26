@@ -17,10 +17,10 @@
     <h2>Enter a comment for Player</h2>
 <form action="/teams/new" method="POST">
   <label>Player Name:
-    <input type="text" name="pName">
+    <input type="text" name="playerName">
   </label><br>
   <label>Age:
-    <input type="number" name="Age">
+    <input type="number" name="age">
   </label><br>
   <label>height:
     <input type="number" name="height">
@@ -34,36 +34,6 @@
   <input type="submit" value="Add Player comment">
 </form>
 
-
-<br>
-
-
-<table>
-    <thead>
-      <tr>
-        <th>Postions</th>
-        <br>
-        <th>Player Name</th>
-        <br>
-        <th>Age</th>
-        <br>
-        <th>Height</th>
-        <br>
-        <th>comment</th>
-      </tr>
-    </thead>
-    <tbody>
-        <% players.forEach(function(p){ %>
-          <tr>
-            <td><%= p.playerName %></td>
-            <td><%= p.age %></td>
-            <td><%= p.height %></td>
-            <td><%= p.position %></td>
-            <td><%= p.comment %></td>
-          </tr>
-        <% }) %>
-      </tbody>
-  </table>
 
 
 <%- include('../partials/footer') %>

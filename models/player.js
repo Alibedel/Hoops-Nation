@@ -13,7 +13,7 @@ const playerSchema = new mongoose.Schema({
     height: Number,
     position: {
         type: String,
-        enum: ['GK', 'CB', 'WB', 'CF', 'AM', 'DM', 'FB']
+        enum: ['SG', 'G', 'SF', 'PF']
     },
     comment: {
         type: String

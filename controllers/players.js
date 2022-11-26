@@ -1,6 +1,7 @@
 const Player = require('../models/player')
 const DATABASE_URL = "mongodb+srv://ali1998:Legendog98@cluster0.ovejytq.mongodb.net/nbaleague?retryWrites=true&w=majority"
 const mongoose = require('mongoose');
+const ObjectId = mongoose.Types.ObjectId;
 
 
 mongoose.connect(DATABASE_URL, {
@@ -16,6 +17,9 @@ db.on('connected', function () {
 });
 
 
+
+
+
 function create(req, res) {
     // convert nowShowing's checkbox of nothing or "on" to boolean
     // req.body.nowShowing = !!req.body.nowShowing;
@@ -23,49 +27,42 @@ function create(req, res) {
     // req.body.cast = req.body.cast.replace(/\s*,\s*/g, ',');
     // split if it's not an empty string
     // if (req.body.cast) req.body.cast = req.body.cast.split(',');
+    console.log('hi')
+    console.log('data', req.body)
     const player = new Player(req.body);
     player.save(function(err, players) {
       // one way to handle errors
+      console.log(players);
       if (err) return res.render('teams/new',{
         players
       });
-      console.log(team);
+      // console.log(players);
       // for now, redirect right back to new.ejs
-      res.redirect('teams/new', {
-        players
-      });
+      Player.find({}, function(err,players){
+        res.render('teams/show', {
+          players
+        });
+        
+      })
     });
 }
 function listAll(req, res){
-    Player.find({}, function(err, players){
-        if(err) throw err
-       res.render('teams/new', {
- 
-            players
-        })
-    }) 
+       res.render('teams/new')
 }
 
-function show(req, res){
-    Player.findById(req.params.id, function(err,player){
-        console.log(req.params)
-        if(err) console.log(err)
-        res.render('teams/new', {
-            player
-        })
-    })
+
+//implement controller function to delete a team
+function deletePlayer(req, res) {
+  Player.deleteOne({ "_id" : ObjectId(req.params.id) }, function(err, player){
+      if(err) console.log(err)
+  });
+  res.redirect('/teams/show');
 }
 
-// function newPlayer(req, res){
-//     res.render('teams/new',{
-//         players
-
-//     })
-// }
 
 module.exports = {
     create,
-    // new: newPlayer,
+    delete: deletePlayer,
     listAll,
-    show
+    // show
 }
