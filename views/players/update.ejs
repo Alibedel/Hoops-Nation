@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/players">Players</a></li>
+            <li><a href="/teams">Teams</a></li>
+        </ul>
+    </nav>
+
+
+    <h2>update new player</h2>
+
+    <form action="/players/<%= player._id %>" method="POST">
+      </label><br>
+      <label>Player name:
+        <input type="text" value="<%= player.playerName %>" name="playerName">
+      </label><br>
+      <label>age:
+        <input type="number" value="<%= player.age %>" name="age">
+      </label><br>
+      <label>position:
+        <input type="text" value="<%= player.position %>" name="position">
+      </label><br>
+      <label>comment:
+        <input type="text" value="<%= player.comment %>" name="comment">
+      </label><br>
+      <input type="submit" value="Update player info">
+    </form>
+    
+<%- include('../partials/footer') %>

@@ -14,7 +14,12 @@
         </ul>
     </nav>
 
+    <form action="/players/new/"
+      class="NEW-form" method="GET">
+      <button type="submit">add player</button>
+    </form>
 
+    
 <table>
     <thead>
       <tr>
@@ -39,15 +44,23 @@
             <td><%= p.height %></td>
             <td><%= p.comment %></td>
             <td>
-              <form action="/teams/<%= p._id %>?_method=DELETE"
+              <form action="/players/<%= p._id %>?_method=DELETE"
                 class="delete-form" method="POST">
                 <button type="submit">X</button>
+              </form>
+            </td>
+            <td>
+              <form action="/players/<%= p._id %>"
+                class="update-form" method="get">
+                <button type="submit">edit</button>
               </form>
             </td>
           </tr>
         <% }) %>
       </tbody>
   </table>
+
+  
 
 
 <%- include('../partials/footer') %>

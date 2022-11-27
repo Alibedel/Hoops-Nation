@@ -18,15 +18,18 @@ db.on('connected', function () {
 
 
 
+function index(req, res){
+  Player.find({}, function(err,players){
+    res.render('players/show', {
+      players
+    });
 
+  })
+
+
+}
 
 function create(req, res) {
-    // convert nowShowing's checkbox of nothing or "on" to boolean
-    // req.body.nowShowing = !!req.body.nowShowing;
-    // remove whitespace next to commas
-    // req.body.cast = req.body.cast.replace(/\s*,\s*/g, ',');
-    // split if it's not an empty string
-    // if (req.body.cast) req.body.cast = req.body.cast.split(',');
     console.log('hi')
     console.log('data', req.body)
     const player = new Player(req.body);
@@ -38,30 +41,55 @@ function create(req, res) {
       });
       // console.log(players);
       // for now, redirect right back to new.ejs
-      Player.find({}, function(err,players){
-        res.render('players/show', {
-          players
-        });
-        
-      })
+        res.redirect('/players')
     });
 }
-function listAll(req, res){
-       res.render('players/new')
+function playerInfo(req, res){
+  Player.findById(req.params.id, function(err, player){
+    res.render('players/update', {
+      player
+    })
+
+
+  })
 }
 
+
+function newPlayer(req, res){
+  res.render('players/new')
+
+
+}
 
 //implement controller function to delete a team
 function deletePlayer(req, res) {
-  Player.deleteOne({ "_id" : ObjectId(req.params.id) }, function(err, player){
+  Player.deleteOne({ "_id" : req.params.id }, function(err, player){
       if(err) console.log(err)
   });
-  res.redirect('/players/show');
+  res.redirect('/players');
 }
+
+function update(req, res){
+  Player.findByIdAndUpdate(req.params.id, 
+      {
+      playerName: req.body.playerName,
+      age: req.body.age,
+      height: req.body.height,
+      comment: req.body.comment
+  }, 
+  function(err, team){
+      if(err) console.log(err)
+      res.redirect('/players')
+  })
+}
+
 
 
 module.exports = {
     create,
     delete: deletePlayer,
-    listAll,
+    playerInfo,
+    update,
+    index,
+    newPlayer
 }

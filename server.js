@@ -8,6 +8,7 @@ var session = require('express-session');
 var axios = require('axios');
 var passport = require('passport');
 var bodyParser = require("body-parser");
+const methodOverride = require('method-override');
 require('dotenv').config();
 
 require('./config/database')
@@ -15,7 +16,7 @@ require('./config/database')
 
 
 var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/users');
+// var commentsRouter = require('./routes/comments');
 var teamsRouter = require('./routes/teams');
 const playersRouter = require('./routes/players');
 
@@ -38,9 +39,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
-// app.use('/users', usersRouter);
+// app.use('/', commentsRouter);
 app.use('/teams', teamsRouter);
 app.use('/players', playersRouter);
 
