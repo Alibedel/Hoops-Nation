@@ -35,7 +35,7 @@ when you run the application, you be in the standings of the NBA league. the app
 
 then you should sign up as the user and view the standings as you please and after you can click on players to register you favorite player you think will do great or will win MVP.
 
-you can leave a comment and delete it if you wish.
+you can leave a comment with the player as a statment and delete the player and the info too if you wish.
 
 1. Front Page:
 ![image](/NBA-league/public/images/Screenshot%202022-11-27%20at%209.33.43%20PM.png)
