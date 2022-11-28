@@ -5,6 +5,7 @@
 body {
   margin: 0;
   padding: 0;
+  background: url("../images/bryant-logo.webp");
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -32,8 +33,12 @@ li {
 nav{
   display: flex;
   flex: 1;
-  background-color: #ccc;
+  background-color: rgb(204, 204, 204);
   height: 45px;
+}
+
+form{
+  align-items: center;
 }
 
 li:hover{
@@ -42,11 +47,25 @@ li:hover{
   color: #fff;
 }
 
-table{
-  border-collapse: collapse;
-  justify-content: center;
-  align-items: center;
-  padding-right: 10px;
+.block{
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: blue;
+  padding: 14px 28px;
+  font-size: 25px;
+  cursor: pointer;
+  text-align: center;
+
+}
+
+
+
+#player-table{
+  display:flex;
+  justify-content:center; 
+  border: black dotted 2px ;
+  background-color: #00B7FF;
 }
 
 thead{
@@ -67,10 +86,19 @@ tbody tr{
   height: 40px;
   justify-content: center;
   padding-right: 10px;
-}
+} 
 
 td {
   padding: 8px;
   text-align: center;
 }
 
+
+/* 
+.delete-form{
+
+}
+
+.update-form{
+
+} */

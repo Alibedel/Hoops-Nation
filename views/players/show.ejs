@@ -16,10 +16,10 @@
 
     <form action="/players/new/"
       class="NEW-form" method="GET">
-      <button type="submit">add player</button>
+      <button type="submit" class="block">add player</button>
     </form>
 
-    
+<div id="player-table">  
 <table>
     <thead>
       <tr>
@@ -35,8 +35,7 @@
       </tr>
     </thead>
     <tbody>
-        <% console.log('hello',players) 
-          players.forEach(function(p){ %>
+          <% players.forEach(function(p){ %>
           <tr>
             <td><%= p.position %></td>
             <td><%= p.playerName %></td>
@@ -59,7 +58,7 @@
         <% }) %>
       </tbody>
   </table>
-
+</div> 
   
 
 
