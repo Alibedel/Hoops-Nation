@@ -4,7 +4,7 @@
 
 ---
 
-## Background 🏞
+## Background 
 
 The project includes space for tracking the standings of the NBA league, the ability to view and add new players that you want comment under  as needed, and space to read the comment and stay updated with your team's place in the league. These features allow for basketball fans to stay always connected to your team and the other fans that support the same team. 
 
@@ -37,8 +37,23 @@ then you should sign up as the user and view the standings as you please and aft
 
 you can leave a comment and delete it if you wish.
 
+1. Front Page:
+![image](/NBA-league/public/images/Screenshot%202022-11-27%20at%209.33.43%20PM.png)
 
 
+2. after clicking Teams :
+![image](/NBA-league/public/images/Screenshot%202022-11-27%20at%204.51.15%20PM.png)
+
+3. clicking Players you can veiw the list:
+![image](/NBA-league/public/images/Screenshot%202022-11-27%20at%209.26.15%20PM.png)
+
+
+4. Now you can enter your favorite player to the list:
+![image](/NBA-league/public/images/Screenshot%202022-11-27%20at%209.26.27%20PM.png)
+
+
+5. now with this form you can update/edit the player you added:
+![image](/NBA-league/public/images/Screenshot%202022-11-27%20at%209.26.51%20PM.png)
 
 ---
 
