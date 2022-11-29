@@ -62,5 +62,4 @@ While this application accomplishes a lot of user-functionality, there are a num
 
 - Add functionality to add comment to teams and descuess with other fans 
 - Add search capability to find player by name and comment on someone else's comment
-- Add "pop-up" verification when deleting a client (as a double check for user)
 - add fixtures and let the fans comment their prediction or a poll on which team is gonna win
